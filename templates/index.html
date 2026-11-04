@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div>
+        <form action="/birthday" method="post" class="birthday_form">
+            <label for="username">Имя:</label>
+            <input type="text" id="username_input" name="username" required>
+
+            <label for="month">Месяц:</label>
+            <input type="text" id="month_input" name="month" required>
+
+            <label for="day">День:</label>
+            <input type="text" id="day_input" name="day" required>
+
+            <button type="submit">Добавить день рождения</button>
+        </form>
+
+        {% if error %}
+            <h3>Ошибка: {{ error }}</h3>
+        {% endif %}
+        
+        {% if birthday_list %}
+            <ul class="birthday_list">
+                {% for user in birthday_list %}
+                    <li>
+                        <h1 class="username">{{ user[0] }}</h1>
+                        <h2>Месяц: {{ user[1] }}, День: {{ user[2] }}</h2>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
