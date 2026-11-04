@@ -1,0 +1,49 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 2rem 1rem;
+	font-family: Arial, sans-serif;
+}
+
+body > div {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	width: min(100%, 32rem);
+	margin: 0 auto;
+}
+
+.birthday_form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.birthday_form input,
+.birthday_form button {
+	width: 100%;
+	padding: 0.65rem;
+	font: inherit;
+}
+
+.birthday_list {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.birthday_list li {
+	padding: 1rem;
+	border: 1px solid;
+}
+
+.birthday_list h1,
+.birthday_list h2 {
+	margin: 0 0 0.5rem;
+}
